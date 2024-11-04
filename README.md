@@ -1,65 +1,71 @@
 # Universal OBD-I Debugging Suite
 
-The Universal OBD-I Debugging Suite is a comprehensive computer-based tool designed to assist automotive enthusiasts, mechanics, and technicians in diagnosing and debugging vehicles equipped with OBD-I (On-Board Diagnostics, version I) systems. With support for various OBD-I protocols, including the ALDL (Assembly Line Diagnostic Link) protocol used by many General Motors vehicles, this suite provides a versatile solution for troubleshooting issues across multiple vehicle makes and models.
+The Universal OBD-I Debugging Suite is a comprehensive, cross-platform diagnostic tool tailored for automotive enthusiasts, mechanics, and technicians to troubleshoot and diagnose vehicles equipped with OBD-I (On-Board Diagnostics, version I) systems. Supporting various OBD-I protocols, such as the ALDL protocol commonly used by General Motors, this suite offers an extensive range of features to assist in identifying issues across diverse vehicle makes and models.
 
 ## Key Features
 
-- **OBD-I Compatibility:** Our tool supports a wide range of OBD-I protocols, allowing you to communicate with and retrieve diagnostic information from vehicles equipped with different OBD-I systems.
+- **Wide OBD-I Protocol Support:** Seamlessly interact with multiple OBD-I protocols to retrieve diagnostic data across various vehicle systems.
   
-- **Communication Interface:** Connect your computer to the vehicle's OBD-I port using a spliced cable or compatible adapter. Establish a reliable communication link to access and analyze crucial data from various systems.
+- **Customizable Communication Interface:** Connect your computer to the vehicle’s OBD-I port via a spliced cable or adapter. Supports a configurable baud rate and data bit settings to ensure compatibility with unique OBD-I system requirements.
+
+- **Data Collection & System Coverage:** Access and interpret diagnostic data from a variety of systems, including:
+  - **Engine** (RPM, temperature, throttle position)
+  - **Transmission** (gear ratio, shift points)
+  - **ABS** (Anti-lock Braking System error codes and status)
+  - **SIR** (Supplemental Inflatable Restraint diagnostics)
+  - **Electrical Systems** (battery voltage, alternator output, and other electrical faults)
   
-- **Comprehensive Data Retrieval:** Gather a wealth of data categories, including ABS (Anti-lock Braking System), engine, transmission, DTCs (Diagnostic Trouble Codes), electrical faults, vehicle information, communications details (for debugging), and SIR (Supplemental Inflatable Restraint) data.
+- **Detailed DTC (Diagnostic Trouble Codes) Interpretation:** Decode generic and manufacturer-specific trouble codes, along with recommended actions or potential causes for each error.
+
+- **Real-time Data Monitoring:** Continuously track live data such as RPM, coolant temperature, throttle position, and vehicle speed. Use real-time data to verify repairs or monitor performance changes.
+
+- **Data Logging and Exporting:** Save diagnostic session logs in formats like CSV or JSON to review, analyze, or share diagnostics data after completing an inspection.
+
+- **Enhanced User Interface:** Intuitive interface with customizable themes, filterable data views, and collapsible sections for ease of use. Ideal for technicians and hobbyists alike.
+
+- **Modular Architecture and Extensibility:** Designed for future updates, allowing new protocols or features to be integrated as automotive technology evolves.
+
+- **Report Generation and Printing:** Create detailed diagnostic reports that summarize key data, DTCs, system status, and real-time observations. Reports can be saved, printed, or shared as needed.
+
+## Planned Additional Features
+
+- **Advanced Data Visualization:** Implement data graphs, real-time charts, and trend analysis to provide insights into vehicle performance over time.
   
-- **Categorization and Organization:** The suite automatically categorizes the retrieved data, making it easy to navigate and understand. You can quickly access specific information related to ABS, engine, transmission, electrical faults, and more, streamlining the debugging process.
+- **Protocol Analyzer:** In-depth analysis tools for decoding raw data streams for protocols not fully supported, enabling easier expansion to non-standard OBD-I systems.
   
-- **Enhanced Error Code Interpretation:** Gain deeper insights into error codes by using the suite's built-in functionality to interpret and display additional information about each code. This feature provides valuable context and assists in diagnosing the root causes of issues.
-  
-- **Real-time Monitoring:** View live sensor data, such as RPM, coolant temperature, throttle position, and more, in real-time to monitor the vehicle's performance and identify anomalies during testing or diagnostics.
-  
-- **User-Friendly Interface:** The suite features a user-friendly interface that enables effortless navigation and interaction. Displayed data is presented in a readable format, making it accessible to both experienced technicians and automotive enthusiasts.
-  
-- **Extensibility and Updates:** The tool is designed with extensibility in mind, allowing for future updates and enhancements. As new OBD-I protocols and features emerge, the suite can be updated to accommodate evolving automotive technologies.
-  
-- **Diagnostic Report Generation:** Generate detailed diagnostic reports summarizing the retrieved data, including error codes, sensor readings, and system statuses. These reports can be saved, printed, or shared with other professionals or vehicle owners for further analysis or documentation.
+- **Customizable Alerts and Notifications:** Set thresholds for specific sensor data (e.g., engine temperature) and receive alerts if readings exceed safe limits.
+
+- **Community-Driven Plugin Support:** Allow users to create and install plugins for specific makes, models, or proprietary protocols, enhancing the versatility of the suite.
 
 ## Getting Started
 
-To use the Universal OBD-I Debugging Suite, follow these steps:
+To get started with the Universal OBD-I Debugging Suite:
 
-1. Connect your computer to the vehicle's OBD-I port using a spliced cable or a compatible adapter.
-
-2. Launch the program and ensure that the communication interface is properly configured.
-
-3. Select the desired data category or diagnostic feature you wish to access.
-
-4. Retrieve the data from the vehicle's OBD-I system and view it on the interface.
-
-5. Utilize the suite's error code interpretation, real-time monitoring, and other features to diagnose and debug vehicle issues effectively.
-
-6. Generate diagnostic reports for documentation or sharing with other professionals or vehicle owners.
+1. **Install Dependencies**: Follow the setup instructions for dependencies and compatible OBD-I adapters.
+2. **Connect Hardware**: Plug a spliced cable or adapter into the vehicle’s OBD-I port and ensure proper connections to avoid data inconsistencies.
+3. **Run Program**: Launch the suite and configure the communication interface.
+4. **Select Data Stream**: Choose the diagnostic data category or live data feed to access.
+5. **Analyze Data**: Use tools like error code interpretation, live data monitoring, and report generation to diagnose and troubleshoot vehicle issues.
+6. **Save or Export Data**: Export session logs and reports for future reference or sharing with other technicians.
 
 ## Requirements
 
-- Compatible computer running the supported operating system (Windows, macOS, Linux)
+- Operating System: Windows, macOS, or Linux
+- Hardware: Spliced cable or compatible adapter for OBD-I port connection
+- Software: [Dependency Requirements] (docs/INSTALL.md)
 
-- Spliced cable or compatible adapter for connecting the computer to the vehicle's OBD-I port
+## Issues & Contributions
 
-- Adequate power supply for both the computer and the vehicle
-
-- Knowledge of the vehicle's OBD-I protocol and communication requirements
-
-## Support and Feedback
-
-For any questions, issues, or feedback regarding the Universal OBD-I Debugging Suite, please visit our [GitHub repository](https://github.com/slammingprogramming/OBD1-Suite/) and utilize the **Issues** feature. Create a new issue to report bugs, suggest enhancements, or seek assistance. Our development team actively monitors the repository and will respond to your inquiries as soon as possible. We value your input and collaboration in improving our tool.
+To report a bug or suggest an enhancement, visit our [GitHub Issues page](https://github.com/slammingprogramming/OBD1-Suite/issues). Pull requests for improvements and new features are welcome!
 
 ## License
 
-The Universal OBD-I Debugging Suite is released under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). Please refer to the LICENSE file for more details.
+We would like to express our gratitude to the open-source community for their invaluable contributions. This program utilizes various libraries and resources, which are credited in the [Acknowledgements](ACKNOWLEDGEMENTS.md) file.
 
 ## Acknowledgements
 
-We would like to express our gratitude to the open-source community for their invaluable contributions. This program utilizes various libraries and resources, which are credited in the [Acknowledgements](ACKNOWLEDGEMENTS.md) file.
+Special thanks to the open-source community for their support. See [Acknowledgements.md](ACKNOWLEDGEMENTS.md) for details.
 
 ## Disclaimer
 
-The Universal OBD-I Debugging Suite is intended for diagnostic and debugging purposes only. It should be used by knowledgeable individuals with a solid understanding of OBD-I systems and protocols. The suite is not responsible for any damage caused by improper usage or misinterpretation of data. Always exercise caution and consult professional advice when dealing with vehicle issues.
+This tool is intended for diagnostic and debugging purposes only by individuals familiar with OBD-I systems. Use with caution, and consult professional advice when interpreting results. The creators assume no liability for damages arising from use and this software is offered with no warranty or guarantee.
