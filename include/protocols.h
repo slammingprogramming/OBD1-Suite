@@ -16,7 +16,7 @@ typedef struct {
 } Protocol;
 
 // Extended list of OBD-I protocols for different manufacturers and models
-#define NUM_PROTOCOLS 20
+#define NUM_PROTOCOLS 22
 
 static Protocol supported_protocols[NUM_PROTOCOLS] = {
     {"ALDL (GM 160 Baud)", 160, "\xF4\x57", 2, 8, 1, 0},
@@ -39,6 +39,8 @@ static Protocol supported_protocols[NUM_PROTOCOLS] = {
     {"Citroën (16-Pin)", 9600, "\xA0\xC1", 2, 8, 1, 0},
     {"Renault (12-Pin)", 9600, "\xA0\xC2", 2, 8, 1, 0},
     {"Fiat (3-Pin)", 9600, "\xA0\xC3", 2, 8, 1, 0}
+    {"Mitsubishi MUT", 9600, "\xA1\xB2", 2, 8, 1, 0},
+    {"Hyundai/Kia HDS", 9600, "\xC1\xD2", 2, 8, 1, 0}
 };
 
 #endif // PROTOCOLS_H
