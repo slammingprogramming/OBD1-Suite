@@ -3,6 +3,7 @@
 #include "connection.h"
 #include "protocols.h"
 #include "logging.h"
+#include "communication_handler.h"
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -32,7 +33,7 @@ int init_serial_connection(const char *port, int baud_rate) {
 }
 
 // Attempt to connect with each protocol and detect success
-int detect_protocol(int serial_fd) {
+Protocol *detect_protocol(int serial_fd) {
     for (int i = 0; i < NUM_PROTOCOLS; i++) {
         // Configure serial settings for the protocol
         struct termios options;
@@ -58,14 +59,14 @@ int detect_protocol(int serial_fd) {
         ssize_t num_bytes = read(serial_fd, buffer, sizeof(buffer));
         if (num_bytes > 0) {
             printf("Connected with protocol: %s\n", supported_protocols[i].name);
-            return 0;  // Success
+            return &supported_protocols[i]; // Success
         }
     }
 
     // No protocol detected, log raw data
     fprintf(stderr, "No supported protocol detected. Logging raw data...\n");
     log_raw_data(serial_fd);
-    return -1;
+    return NULL;
 }
 
 // Connect to OBD system with detection and error handling
@@ -73,9 +74,24 @@ void connect_to_obd(const char *port) {
     int serial_fd = init_serial_connection(port, B9600);  // Default to 9600 for initial attempt
     if (serial_fd == -1) return;
 
-    if (detect_protocol(serial_fd) != 0) {
+    Protocol *protocol = detect_protocol(serial_fd);
+    if (!protocol) {
         fprintf(stderr, "Error: No compatible OBD-I system found.\n");
+        close(serial_fd);
+        return;
     }
 
-    close(serial_fd);
+    CommunicationHandler *handler = init_communication_handler(serial_fd, protocol);
+    if (!handler) {
+        fprintf(stderr, "Error initializing communication handler.\n");
+        close(serial_fd);
+        return;
+    }
+
+    // Example command (replace with actual commands)
+    char response[256];
+    send_command(handler, "TEST_COMMAND", response, sizeof(response));
+    printf("Response: %s\n", response);
+
+    close_communication_handler(handler);
 }
